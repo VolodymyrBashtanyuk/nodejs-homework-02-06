@@ -1,8 +1,4 @@
-// const { listContacts } = require('../../modules/contacts');
 const Contact = require('../../modules/contact');
-
-console.log(Contact)
-
 
 const getAll = async (req, res, next) => {
     try {
