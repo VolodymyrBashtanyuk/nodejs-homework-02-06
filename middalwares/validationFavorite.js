@@ -1,13 +1,13 @@
 const createError = require('http-errors');
 
-const validation = (schema) => {
+const validationFavorite = (schema) => {
   return (req, res, next) => {
     const { error } = schema.validate(req.body);
     if (error) {
-      throw createError(400, "missing required field");
+      throw createError(400, "missing field favorite");
     }
     next();
   };
 };
 
-module.exports = validation;
+module.exports = validationFavorite;

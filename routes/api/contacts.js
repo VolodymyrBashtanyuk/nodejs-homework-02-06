@@ -1,7 +1,7 @@
 const express = require('express');
 
-const { validation, paramValidation, isValidId, validationFavorite } = require('../../middalwares/validation');
-const { contactSchema, schemaId, updateFavoriteSchema } = require('../../schemasValidation/schemasValidation');
+const { validation, paramValidation, isValidId, validationFavorite } = require('../../middalwares');
+const { contactSchema, schemaId, updateFavoriteSchema } = require('../../schemasValidation');
 
 const validateMiddalware = validation(contactSchema);
 const validateMiddalwareId = paramValidation(schemaId);
@@ -26,7 +26,7 @@ router.put('/:contactId', isValidId, validateMiddalwareId, updateContacts);
 router.patch('/:contactId/favorite', isValidId, validateMiddalwareFavorite, updateFavorite)
 
 
-module.exports = router
+module.exports = router;
 
 
 
