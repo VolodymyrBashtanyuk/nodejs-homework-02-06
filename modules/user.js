@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const handleMongooseError = require('../helpers/mongooseError')
+const handleMongooseError = require('../helpers/mongooseError');
 
 const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -21,14 +21,14 @@ const userSchema = new Schema(
             enum: ["starter", "pro", "business"],
             default: "starter"
         },
-        token: {
-            type: String,
-            default: null,
-        },
-            owner: {
-            type: SchemaTypes.ObjectId,
-            ref: 'user',
-        }
+        // token: {
+        //     type: String,
+        //     default: null,
+        // },
+        //     owner: {
+        //     type: SchemaTypes.ObjectId,
+        //     ref: 'user',
+        // }
     }, {versionKey: false}
 );
 

@@ -1,7 +1,7 @@
 const Contact = require('../../modules/contact');
 
 
-const createError = require('http-errors')
+const createError = require('http-errors');
 
 
 const deleteContact = async(req, res, next) => {
