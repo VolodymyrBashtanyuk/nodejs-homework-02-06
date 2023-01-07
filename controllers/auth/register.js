@@ -1,6 +1,6 @@
 const bcryptjs = require('bcryptjs');
 
-const User = require('../../modules/user');
+const { User } = require('../../modules');
 
 const createError = require('http-errors');
 

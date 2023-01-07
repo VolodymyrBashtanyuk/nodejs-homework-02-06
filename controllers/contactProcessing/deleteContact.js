@@ -1,4 +1,4 @@
-const Contact = require('../../modules/contact');
+const { Contact } = require('../../modules');
 
 
 const createError = require('http-errors');

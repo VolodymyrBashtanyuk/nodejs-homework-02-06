@@ -1,10 +1,11 @@
 
-const Contact = require('../../modules/contact');
+const { Contact } = require('../../modules');
 
 
 const addContact = async(req, res, next) => {
   try {
-      const newContact = await Contact.create(req.body);
+    const { _id: owner } = req.user;
+    const newContact = await Contact.create({ ...req.body, owner });
       res.json({
         status: "success",
           code: 201,
