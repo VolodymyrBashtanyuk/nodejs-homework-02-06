@@ -2,6 +2,7 @@ const fs = require('fs/promises');
 const path = require('path');
 // const createError = require('http-errors');
 const Jimp = require('jimp');
+// const avatarProcessing = require('../../helpers/jimp')
 
 
 
@@ -14,9 +15,11 @@ const avatarsDir = path.join(__dirname, '../../', 'public', 'avatars')
 const updateAvatar = async (req, res, next) => {
     const { path: tempUpload, originalname } = req.file;
     const { _id } = req.user;
-    
-console.log(originalname)
 
+    const avatarPic = await Jimp.read(tempUpload)
+    await avatarPic
+        .resize(250, 250)
+        .writeAsync(tempUpload);
 
     const fileName = `${_id}_${originalname}`
     const resultUpload = path.join(avatarsDir, fileName);
