@@ -1,8 +1,6 @@
 const fs = require('fs/promises');
 const path = require('path');
-// const createError = require('http-errors');
 const Jimp = require('jimp');
-// const avatarProcessing = require('../../helpers/jimp')
 
 
 
