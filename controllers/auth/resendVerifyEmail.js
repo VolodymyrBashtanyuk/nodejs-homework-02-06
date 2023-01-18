@@ -13,7 +13,7 @@ const resendVerifyEmail = async (req, res, next) => {
         if (!user || user.verify) {
             throw createError(400, 'Verification has already been passed')
         };
-
+        
           const veryfiEmail = {
             to: email,
             subject: 'Verify You email',
